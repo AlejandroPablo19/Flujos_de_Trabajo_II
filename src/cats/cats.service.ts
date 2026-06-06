@@ -89,10 +89,10 @@ export class CatService{
     deleteCat(id:number): string{
         const catsFound = this.cats.find(cat => cat.id === id);
         if (!catsFound){
-            return 'Gato con el ID: ${id} no fue encontrado';
+            return ("Gato con el ID: "+ id +" no fue encontrado");
         }
         this.cats = this.cats.filter(cat => cat.id !== id);
-        return 'Gato con el ID: ${id} ha sido eliminado';
+        return "Gato con el ID: "+ id + " ha sido eliminado";
     }
 
     /**
