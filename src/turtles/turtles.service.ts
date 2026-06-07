@@ -44,6 +44,7 @@ export class TurtleService{
         const newTurtle = {
             ...turtle};
         this.turtles.push(newTurtle)
+        return newTurtle;
     }
 
     //Método para actualizar la lista de tortugas
@@ -73,4 +74,3 @@ export class TurtleService{
         return this.turtles.find((item) => item.id === id);
     }
 }
-
