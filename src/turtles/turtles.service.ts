@@ -48,7 +48,7 @@ export class TurtleService{
     }
 
     //Método para actualizar la lista de tortugas
-    update(id: number, turtles:Turtle): Turtle | string {
+    updateTurtle(id: number, turtles:Turtle): Turtle | string {
         const updateTurtle = this.turtles.find(t => t.id === id);
         if (!updateTurtle){
             return ("La tortuga con el ID: " + id + " no fue encontrada");
