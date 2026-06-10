@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+
+//modelos de la app
+model USer{
+  id  String  @id @default(cuid())
+  email String  @unique
+  username  String  @unique
+  name  String
+  image String? // ? indica que puede ser nulo
+  password  String
+  active  Boolean @default(true)
+
+  //campos de timestap
+  createdAt DateTime  @default(now())
+  updateAt  DateTime? @updatedAt  // ? indica que puede ser nulo
+}
